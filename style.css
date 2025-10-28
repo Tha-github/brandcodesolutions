@@ -1,0 +1,229 @@
+:root {
+  --preto: #000;
+  --azul: #0057ff;
+  --branco: #ffffff;
+  --cinza: #ececec;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(6px);
+  padding: 0.6rem 1rem;
+}
+
+.navbar-brand img {
+  border-radius: 10px;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar .nav-link {
+  color: var(--cinza);
+  padding: 0.8rem 1rem;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: var(--azul);
+}
+
+/* Espaço pro conteúdo não ficar sob o header fixo */
+body {
+  padding-top: 70px;
+}
+
+
+body {
+  background-color: var(--preto);
+  color: var(--cinza);
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--branco);
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: var(--azul);
+}
+
+/* === HERO === */
+.hero {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #000 60%, #001d6a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--cinza);
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.btn-azul {
+  background-color: var(--azul);
+  color: var(--branco);
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-azul:hover {
+  box-shadow: 0 0 10px var(--azul);
+  transform: scale(1.05);
+}
+
+/* === MAPA === */
+.mapa {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.mapa img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* === CLIENTES === */
+.clientes {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.clientes-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.clientes img {
+  width: 100px;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.clientes img:hover {
+  filter: grayscale(0%) brightness(1.2);
+  transform: scale(1.1);
+}
+
+/* === CONTRATAR === */
+.contratar {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #0a0a0a;
+}
+
+.contratar p {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  font-size: 1.1rem;
+}
+
+.contratar .destaque {
+  color: var(--azul);
+  font-weight: 600;
+}
+
+/* === FAQ === */
+.faq {
+  padding: 5rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.accordion-button {
+  background-color: #111;
+  color: var(--cinza);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--azul);
+  color: var(--branco);
+}
+
+.accordion-body {
+  background-color: #0f0f0f;
+  color: var(--cinza);
+}
+
+/* === VOLTAR AO TOPO === */
+.voltar-topo {
+  text-align: center;
+  padding: 2rem;
+}
+
+.voltar-topo a {
+  color: var(--cinza);
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.voltar-topo a:hover {
+  color: var(--azul);
+  transform: translateY(-5px);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #0a0a0a;
+  padding: 3rem 1rem;
+  color: var(--cinza);
+}
+
+footer h5 {
+  color: var(--branco);
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer .footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .clientes img {
+    width: 80px;
+  }
+}
