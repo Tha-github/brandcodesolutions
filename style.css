@@ -60,13 +60,23 @@ a {
 /* === HERO === */
 .hero {
   height: 100vh;
-  background: linear-gradient(to bottom right, #000 60%, #001d6a);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 0 1rem;
+}
+
+/* Vídeo de fundo */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cobre toda a área sem distorção */
+  z-index: -1; /* mantém atrás do conteúdo */
 }
 
 .hero h1 {

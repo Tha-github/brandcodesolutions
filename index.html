@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
 <header class="navbar navbar-expand-lg bg-black navbar-dark fixed-top">
   <div class="container d-flex justify-content-between align-items-center">
     
@@ -27,10 +27,9 @@
     <!-- Menu oculto -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav text-center">
-        <li class="nav-item"><a class="nav-link" href="#topo">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="#mapa">Onde Atuamos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mapa">Sites</a></li>
+        <li class="nav-item"><a class="nav-link" href="#clientes">Softwares</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">Aplicativos</a></li>
       </ul>
     </div>
 
@@ -38,11 +37,35 @@
 </header>
 
   <!-- HERO -->
-  <section class="hero" id="topo">
-    <h1>Transformamos ideias em soluções digitais</h1>
-    <p>Sites, softwares e aplicativos sob medida para o seu negócio.</p>
-    <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Agendar Reunião</a>
-  </section>
+<section class="hero" id="topo">
+
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="images/backgroundbanner.mp4" type="video/mp4">
+    <script>
+      const video = document.querySelector('.hero-video');
+    
+      video.addEventListener('timeupdate', () => {
+        // Quando faltar 0.1s para o fim, reinicia o vídeo
+        if (video.duration - video.currentTime <= 0.1) {
+          video.currentTime = 0;
+          video.play();
+        }
+      });
+    </script>
+  </video>
+  
+  <h1>Transformamos ideias em soluções digitais</h1>
+  <p>
+    Muito prazer, somos a <span style="color:#0057ff; font-weight:600;">BrandCode Solutions</span>.
+    Uma empresa de tecnologia presente em <span style="color:#0057ff; font-weight:600;">8 estados do Brasil</span>, formada por uma equipe de especialistas em 
+    <span style="color:#0057ff; font-weight:600;">Design Gráfico, UI/UX, Marketing e Tecnologia da Informação</span> que atuam de forma integrada para desenvolver 
+    <span style="color:#0057ff; font-weight:600;">soluções digitais de alta qualidade</span>.
+    Criamos <span style="color:#0057ff; font-weight:600;">sites, softwares e aplicativos 100% personalizados</span>, projetados para atender às necessidades exclusivas de cada cliente e 
+    impulsionar o crescimento do seu negócio com inovação e excelência.
+  </p>
+  <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Agendar Reunião</a>
+</section>
+
 
   <!-- MAPA -->
   <section class="mapa">
@@ -59,10 +82,10 @@
       <img src="images/logo2.png" alt="Cliente 2" />
       <img src="images/logo3.png" alt="Cliente 3" />
       <img src="images/logo4.png" alt="Cliente 4" />
-      <!--<img src="logo5.png" alt="Cliente 5" />
-      <img src="logo6.png" alt="Cliente 6" />
-      <img src="logo7.png" alt="Cliente 7" />
-      <img src="logo8.png" alt="Cliente 8" />
+      <img src="images/logo5.png" alt="Cliente 5" />
+      <img src="images/logo6.png" alt="Cliente 6" />
+      <img src="images/logo7.png" alt="Cliente 7" />
+      <!--<img src="logo8.png" alt="Cliente 8" />
       <img src="logo9.png" alt="Cliente 9" />-->
     </div>
   </section>
@@ -130,16 +153,16 @@
       <div class="row">
         <div class="col-md-4 mb-4">
           <h5>BrandCode Solutions</h5>
-          <p>📧 contato@brandcode.com.br</p>
-          <p>📱 WhatsApp: +55 (18) 99803-7956</p>
-          <p>📷 Instagram: @brandcodesolutions</p>
+          <p>contato@brandcode.com.br</p>
+          <p>WhatsApp: +55 (18) 99803-7956</p>
+          <p>Instagram: @brandcodesolutions</p>
         </div>
         <div class="col-md-4 mb-4">
           <h5>Páginas</h5>
           <ul>
             <li>Sites Profissionais</li>
             <li>Softwares Sob Medida</li>
-            <li>Aplicativos ***</li>
+            <li>Aplicativos Sob Medida</li>
           </ul>
         </div>
         <div class="col-md-4 mb-4">
