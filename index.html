@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BrandCode Solutions</title>
+  <link rel="icon" href="images/favicon-16x16.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 </head>
 <body>
 
@@ -16,23 +21,15 @@
     <!-- Logo -->
 <a class="navbar-brand" href="#topo">
   <img id="logo" src="images/brandcodelogo1.png" alt="BrandCode Solutions" width="45" height="45">
+  <style>
+#logo {
+  transition: 0.3s ease;
+}
+.navbar-brand:hover #logo {
+  content: url("images/brandcodelogo2.png");
+}
 
-  <script>
-    // Espera o DOM carregar
-    document.addEventListener('DOMContentLoaded', function() {
-      const logo = document.getElementById('logo');
-  
-      window.addEventListener('scroll', function() {
-        // Troca o logo quando o usuário rolar a página
-        if (window.scrollY > 50) { 
-          logo.src = 'images/brandcodelogo2.png';
-        } else {
-          logo.src = 'images/brandcodelogo1.png';
-        }
-      });
-    });
-  </script>
-
+  </style>
 </a>
 
     <!-- Botão hamburguer -->
@@ -56,40 +53,41 @@
   <!-- HERO -->
 <section class="hero" id="topo">
 
-  <video autoplay muted loop playsinline class="hero-video">
+  <video id="bg-video" autoplay muted playsinline preload="auto" class="hero-video">
     <source src="images/backgroundbanner.mp4" type="video/mp4">
-    <script>
-      const video = document.querySelector('.hero-video');
-    
-      video.addEventListener('timeupdate', () => {
-        // Quando faltar 0.1s para o fim, reinicia o vídeo
-        if (video.duration - video.currentTime <= 0.1) {
-          video.currentTime = 0;
-          video.play();
-        }
-      });
-    </script>
+    Seu navegador não suporta vídeo em background.
   </video>
   
-  <h1>Transformamos ideias em soluções digitais</h1>
+  <script>
+    const video = document.getElementById('bg-video');
+  
+    function seamlessLoop() {
+      const endThreshold = 0.12; // tempo antes do fim para reiniciar
+      if (video.duration - video.currentTime <= endThreshold) {
+        video.currentTime = 0.05; // reinicia instantaneamente
+        video.play();
+      }
+      requestAnimationFrame(seamlessLoop);
+    }
+  
+    video.addEventListener('canplay', () => {
+      video.play();
+      requestAnimationFrame(seamlessLoop);
+    });
+  </script>
+  
+  
+  <h1>Construímos o futuro digital da sua empresa.</h1>
   <p>
     Muito prazer, somos a <span style="color:#0057ff; font-weight:600;">BrandCode Solutions</span>.
-    Uma empresa de tecnologia presente em <span style="color:#0057ff; font-weight:600;">8 estados do Brasil</span>, formada por uma equipe de especialistas em 
+    Uma empresa de tecnologia presente em 8 estados do Brasil, formada por uma equipe de especialistas em 
     <span style="color:#0057ff; font-weight:600;">Design Gráfico, UI/UX, Marketing e Tecnologia da Informação</span> que atuam de forma integrada para desenvolver 
-    <span style="color:#0057ff; font-weight:600;">soluções digitais de alta qualidade</span>.
-    Criamos <span style="color:#0057ff; font-weight:600;">sites, softwares e aplicativos 100% personalizados</span>, projetados para atender às necessidades exclusivas de cada cliente e 
+    soluções digitais de alta qualidade.
+    Criamos <span style="color:#0057ff; font-weight:600;">sites, softwares e aplicativos sob medida</span>, projetados para atender às necessidades exclusivas de cada cliente e 
     impulsionar o crescimento do seu negócio com inovação e excelência.
   </p>
-  <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Agendar Reunião</a>
+  <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Receber Orçamento Exclusivo!</a>
 </section>
-
-
-  <!-- MAPA -->
-  <section class="mapa">
-    <h2>Estamos presentes em diversos estados do Brasil</h2>
-    <p>A BrandCode Solutions já realizou projetos em diferentes regiões do país — entregando inovação, desempenho e tecnologia sob medida.</p>
-    <img src="images/brandcodemap.png" alt="Estados em que estamos presentes" />
-  </section>
 
   <!-- CLIENTES -->
   <section class="clientes">
@@ -102,18 +100,75 @@
       <img src="images/logo5.png" alt="Cliente 5" />
       <img src="images/logo6.png" alt="Cliente 6" />
       <img src="images/logo7.png" alt="Cliente 7" />
-      <!--<img src="logo8.png" alt="Cliente 8" />
-      <img src="logo9.png" alt="Cliente 9" />-->
+      <img src="images/logo8.png" alt="Cliente 8" />
+      <img src="images/logo9.png" alt="Cliente 9" />
     </div>
   </section>
 
+  <!-- MAPA -->
+  <section class="mapa">
+    <h2>Estamos presentes em diversos estados do Brasil</h2>
+    <p>Já atuamos em diversas regiões do país, oferecendo soluções de qualidade, eficientes e totalmente personalizadas para cada projeto.</p>
+    <img src="images/brandcodemap.png" alt="Estados em que estamos presentes" />
+  </section>
+
+<!--SOLUÇÕES-->
+<section class="solucoes-impacto">
+  <div class="container">
+    <h1>Nossas Soluções de Impacto</h1>
+
+    <div class="solucoes-grid">
+      <div class="solucao-box">
+        <div class="icone"><i class="fa-solid fa-globe"></i></div>
+        <h3>Sites Profissionais</h3>
+        <p>
+          Desenvolvemos sites personalizados, estratégicos e otimizados para aparecer no Google, refletindo com precisão a identidade e os valores da sua empresa.
+        </p>
+        <ul>
+          <li><b> Design personalizado:</b> Layout exclusivo que reflete a identidade da sua empresa.</li>
+          <li><b>Site no Google:</b> Otimização avançada com técnicas de SEO para garantir melhor posicionamento e visibilidade nos motores de busca.</li>
+        
+          <li><b>Responsivo:</b> Compatível com todos os dispositivos, do desktop ao mobile.</li>
+          <li><b>UX Estratégico:</b> Experiência de navegação planejada para conversão.</li><br>
+        </ul>
+      </div>
+
+      <div class="solucao-box">
+        <div class="icone"><i class="fa fa-sitemap"></i></div>
+        <h3>Softwares Sob Medida</h3>
+        <p>
+          Desenvolvemos softwares personalizados e eficientes, adaptados às necessidades específicas da sua empresa, garantindo eficiência, integração e escalabilidade nos processos internos.
+        </p>
+        <ul>
+          <li><b>Automatização de Processos:</b> Redução de tarefas manuais e aumento da eficiência operacional.</li>
+          <li><b>Escalabilidade:</b> Software preparado para crescer junto com o seu negócio.</li>
+          <li><b>Interface Intuitiva:</b> Design pensado para facilitar a experiência do usuário.</li>
+          <li><b>Atualização Contínua:</b> Suporte e manutenção contínua para garantir o sucesso do seu software.</li>
+        </ul>
+      </div>
+
+      <div class="solucao-box">
+        <div class="icone"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3>Aplicativos Modernos</h3>
+        <p>
+          Desenvolvemos aplicativos modernos e funcionais, com design intuitivo e tecnologia de ponta, garantindo experiência fluida, alta performance e conectividade total com o seu negócio.
+        </p>
+        <ul>
+          <li><b>Funcionalidades Personalizadas:</b> Recursos desenvolvidos de acordo com a necessidade do seu negócio.</li>
+          <li><b>Performance Otimizada:</b> Aplicativos rápidos e responsivos, sem travamentos.</li>
+          <li><b>Experiência do Usuário:</b> Navegação fluida e intuitiva para engajamento máximo.</li>
+          <li><b>Conectividade Total:</b> Integração com redes sociais e serviços digitais.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- CONTRATAR -->
   <section class="contratar">
-    <h2>Por que contratar nossos serviços?</h2>
-    <p>Na <span class="destaque">BrandCode Solutions</span>, cada projeto é desenvolvido <span class="destaque">sob medida</span>, alinhado às <span class="destaque">necessidades reais</span> do seu negócio.  
-    Nossa equipe combina <span class="destaque">tecnologia, design e estratégia</span>, entregando resultados que <span class="destaque">impulsionam o crescimento digital</span> da sua empresa.  
-    Escolher a BrandCode é investir em <span class="destaque">eficiência</span>, <span class="destaque">inovação</span> e <span class="destaque">parceria</span>.</p>
-    <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Agendar Reunião</a>
+    <h2>Por que nos escolher?</h2>
+    <p>Escolher a <span class="destaque">BrandCode Solutions</span> significa apostar em experiência comprovada, soluções personalizadas e tecnologia de ponta. <span class="destaque">Desenvolvemos sites, softwares e aplicativos sob medida</span>, pensados para atender às necessidades reais do seu negócio e gerar resultados concretos. <span class="destaque">Nossa equipe está dedicada ao sucesso da sua empresa</span>, oferecendo suporte contínuo para garantir performance e atualização constante! Com foco em inovação e resultados, <span class="destaque">criamos soluções modernas que aumentam a visibilidade, engajamento e crescimento da sua marca</span>. Sendo assim, você estará sempre à frente da concorrência, com soluções eficientes, <span class="destaque">atualizadas e alinhadas às tendências do mercado</span>.</p>
+    <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Receber Orçamento Exclusivo!</a>
   </section>
 
   <!-- FAQ -->
@@ -121,11 +176,11 @@
     <h2 class="text-center mb-4">Dúvidas Frequentes</h2>
     <div class="accordion" id="faqAccordion">
       <div class="accordion-item">
-        <h2 class="accordion-header">
+        <h3 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
             Como funciona o processo de criação de um site?
           </button>
-        </h2>
+        </h3>
         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
             Iniciamos com uma reunião de briefing, elaboramos o design e desenvolvemos o projeto com base nas suas expectativas.
@@ -133,11 +188,11 @@
         </div>
       </div>
       <div class="accordion-item">
-        <h2 class="accordion-header">
+        <h3 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
             Qual o prazo médio de desenvolvimento de um software?
           </button>
-        </h2>
+        </h3>
         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
             Depende da complexidade, mas geralmente entre 30 e 90 dias.
@@ -145,11 +200,11 @@
         </div>
       </div>
       <div class="accordion-item">
-        <h2 class="accordion-header">
+        <h3 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
             Vocês criam aplicativos para Android e iOS?
           </button>
-        </h2>
+        </h3>
         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
             Sim! Desenvolvemos aplicativos híbridos e nativos para Android e iOS.
