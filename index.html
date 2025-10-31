@@ -60,21 +60,42 @@
   
   <script>
     const video = document.getElementById('bg-video');
-  
-    function seamlessLoop() {
-      const endThreshold = 0.12; // tempo antes do fim para reiniciar
-      if (video.duration - video.currentTime <= endThreshold) {
-        video.currentTime = 0.05; // reinicia instantaneamente
+    
+    const videos = [
+      "images/backgroundbanner.mp4",
+      "images/backgroundbanner2.mp4",
+      "images/backgroundbanner3.mp4",
+      "images/backgroundbanner4.mp4",
+      "images/backgroundbanner5.mp4"
+    ];
+    
+    let currentIndex = 0;
+    
+    // Inicia o primeiro vídeo
+    video.src = videos[currentIndex];
+    video.play();
+    
+    // Função para verificar o fim do vídeo e passar para o próximo
+    function checkVideoEnd() {
+      const threshold = 0.05; // segundos antes do final para trocar
+      if (video.duration - video.currentTime <= threshold) {
+        currentIndex = (currentIndex + 1) % videos.length;
+        video.src = videos[currentIndex];
         video.play();
       }
-      requestAnimationFrame(seamlessLoop);
+      requestAnimationFrame(checkVideoEnd);
     }
-  
+    
+    // Começa a verificação contínua
     video.addEventListener('canplay', () => {
-      video.play();
-      requestAnimationFrame(seamlessLoop);
+      requestAnimationFrame(checkVideoEnd);
     });
-  </script>
+    </script>
+    
+    
+    
+    
+  
   
   
   <h1>Construímos o futuro digital da sua empresa.</h1>
@@ -115,7 +136,8 @@
 <!--SOLUÇÕES-->
 <section class="solucoes-impacto">
   <div class="container">
-    <h1>Nossas Soluções de Impacto</h1>
+    <h2>Nossas soluções de impacto</h2>
+    <br>
 
     <div class="solucoes-grid">
       <div class="solucao-box">
@@ -164,6 +186,28 @@
   </div>
 </section>
 
+<!-- Tecnologia -->
+<section class="tecnologia">
+  <h2>Principais tecnologias utilizadas pela  <span style="color:#0057ff; font-weight:600;">BrandCode Solutions</span></h2>
+  <div class="tecnologia-logos">
+    <img src="images/tec1.png" alt="Tecnologia 1" />
+    <img src="images/tec2.png" alt="Tecnologia 2" />
+    <img src="images/tec3.png" alt="Tecnologia 3" />
+    <img src="images/tec4.png" alt="Tecnologia 4" />
+    <img src="images/tec5.png" alt="Tecnologia 5" />
+    <img src="images/tec6.png" alt="Tecnologia 6" />
+    <img src="images/tec7.png" alt="Tecnologia 7" />
+    <img src="images/tec8.png" alt="Tecnologia 8" />
+    <img src="images/tec9.png" alt="Tecnologia 9" />
+    <img src="images/tec10.png" alt="Tecnologia 10" />
+    <img src="images/tec11.png" alt="Tecnologia 11" />
+    <img src="images/tec12.png" alt="Tecnologia 12" />
+    <img src="images/tec13.png" alt="Tecnologia 13" />
+    <img src="images/tec14.png" alt="Tecnologia 14" />
+    <img src="images/tec15.png" alt="Tecnologia 15" />
+  </div>
+</section>
+
   <!-- CONTRATAR -->
   <section class="contratar">
     <h2>Por que nos escolher?</h2>
@@ -173,50 +217,65 @@
 
   <!-- FAQ -->
   <section class="faq">
-    <h2 class="text-center mb-4">Dúvidas Frequentes</h2>
-    <div class="accordion" id="faqAccordion">
-      <div class="accordion-item">
-        <h3 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-            Como funciona o processo de criação de um site?
-          </button>
-        </h3>
-        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Iniciamos com uma reunião de briefing, elaboramos o design e desenvolvemos o projeto com base nas suas expectativas.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h3 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-            Qual o prazo médio de desenvolvimento de um software?
-          </button>
-        </h3>
-        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Depende da complexidade, mas geralmente entre 30 e 90 dias.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h3 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-            Vocês criam aplicativos para Android e iOS?
-          </button>
-        </h3>
-        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Sim! Desenvolvemos aplicativos híbridos e nativos para Android e iOS.
-          </div>
-        </div>
+    <h2 class="text-center mb-4">Respostas para dúvidas frequentes</h2>
+  
+    <div class="faq-item">
+      <div class="faq-question">Como é o processo de desenvolvimento de um projeto na BrandCode Solutions?</div>
+      <div class="faq-answer">
+        Começamos com uma reunião para que você conheça a BrandCode Solutions e compartilhe suas expectativas. Em seguida, desenvolvemos um protótipo imediato, permitindo que você visualize como seu produto funcionará – e tudo isso totalmente gratuito!
       </div>
     </div>
+  
+    <div class="faq-item">
+      <div class="faq-question">Qual o prazo médio de desenvolvimento de um projeto com a BrandCode Solutions?</div>
+      <div class="faq-answer">
+        O prazo de desenvolvimento varia conforme a complexidade e o escopo do projeto. Na BrandCode Solutions, priorizamos entregas eficientes sem comprometer a qualidade. Prazos específicos são discutidos durante a consultoria inicial, garantindo alinhamento completo com suas necessidades.
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question">As soluções da BrandCode Solutions (sites, softwares e aplicativos) funcionam perfeitamente em todos os dispositivos?</div>
+      <div class="faq-answer">
+        Sim! A BrandCode Solutions oferece soluções de alta qualidade, sempre priorizando a experiência do usuário. Criamos designs intuitivos e totalmente responsivos, garantindo navegação fácil. Além disso, nossos aplicativos são desenvolvidos de forma híbrida e nativa, assegurando compatibilidade completa com Android e iOS.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">A BrandCode Solutions realiza atualizações em projetos desenvolvidos por outras empresas?</div>
+      <div class="faq-answer">
+        Sim! A BrandCode Solutions pode realizar atualizações em projetos já concluídos, mesmo que tenham sido desenvolvidos por outras empresas. Manter os dados e elementos da sua marca atualizados é fundamental para garantir consistência, eficiência e uma experiência de usuário de qualidade.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Posso contar com os serviços da BrandCode Solutions na minha região?</div>
+      <div class="faq-answer">
+        A BrandCode Solutions já atuou em 8 estados do Brasil e em diversas regiões da Europa. Trabalhamos de forma totalmente remota, o que nos permite atender você onde quer que esteja, com a mesma qualidade e eficiência.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">É possível contar com suporte da BrandCode Solutions após a entrega do projeto?</div>
+      <div class="faq-answer">
+        Com certeza! A BrandCode Solutions oferece suporte dedicado mesmo após a entrega do projeto, garantindo que você tenha acompanhamento contínuo e solução rápida para qualquer necessidade.
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const item = question.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+      </script>
+
   </section>
+  
 
   <!-- VOLTAR AO TOPO -->
   <div class="voltar-topo">
-    <a href="#topo">⬆️<br>Voltar ao topo</a>
+    <h4 href="#topo">⬆️<br><br>VOLTAR AO TOPO</h4>
   </div>
 
   <!-- FOOTER -->
@@ -224,30 +283,29 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <h5>BrandCode Solutions</h5>
-          <p>contato@brandcode.com.br</p>
+          <h5><span style="color:#0057ff; font-weight:600;">BrandCode Solutions</span></h5>
+          <p>contato@brandcodesolutions.com.br</p>
           <p>WhatsApp: +55 (18) 99803-7956</p>
           <p>Instagram: @brandcodesolutions</p>
         </div>
         <div class="col-md-4 mb-4">
-          <h5>Páginas</h5>
+          <h5><span style="color:#0057ff; font-weight:600;">Páginas</span></h5>
           <ul>
             <li>Sites Profissionais</li>
             <li>Softwares Sob Medida</li>
-            <li>Aplicativos Sob Medida</li>
+            <li>Aplicativos Modernos</li>
           </ul>
         </div>
         <div class="col-md-4 mb-4">
-          <h5>Institucional</h5>
+          <h5><span style="color:#0057ff; font-weight:600;">Institucional</span></h5>
           <ul>
-            <li>Missão</li>
-            <li>Visão e Valores</li>
+            <li>Missão Visão e Valores</li>
             <li>Nossa História</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        © 2022-2025 BrandCode Solutions. Todos os direitos reservados.
+        <span style="color:#0057ff; font-weight:600;">© 2022-2025 BrandCode Solutions. Todos os direitos reservados.</span>
       </div>
     </div>
   </footer>
