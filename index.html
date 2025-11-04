@@ -56,6 +56,11 @@
       <source src="images/backgroundbanner.mp4" type="video/mp4">
       Seu navegador não suporta vídeo em background.
     </video>
+
+    <script> const video = document.getElementById('bg-video'); function seamlessLoop() { const endThreshold = 0.12; 
+    if (video.duration - video.currentTime <= endThreshold) { video.currentTime = 0.05;
+    video.play(); } requestAnimationFrame(seamlessLoop); } video.addEventListener('canplay', () => { video.play(); requestAnimationFrame(seamlessLoop); }); </script>
+
     <h1>Construímos o futuro digital da sua empresa.</h1>
     <p>
       Muito prazer, somos a <span style="color:#0057ff; font-weight:600;">BrandCode Solutions</span>.
@@ -120,7 +125,7 @@
 
         <div class="solucao-box">
           <div class="icone"><i class="fa fa-sitemap"></i></div>
-          <h3>Softwares Sob Medida</h3>
+          <h3>Softwares Sob Demanda</h3>
           <p>
             Desenvolvemos softwares personalizados e eficientes, adaptados às necessidades específicas da sua empresa,
             garantindo eficiência, integração e escalabilidade nos processos internos.
@@ -185,7 +190,8 @@
       para garantir performance e atualização constante! Com foco em inovação e resultados, <span
         class="destaque">criamos soluções modernas que aumentam a visibilidade, engajamento e crescimento da sua
         marca</span>. Sendo assim, você estará sempre à frente da concorrência, com soluções eficientes, <span
-        class="destaque">atualizadas e alinhadas às tendências do mercado</span>.</p>
+        class="destaque">atualizadas e alinhadas às tendências do mercado</span>.
+    </p>
     <a href="https://wa.me/5518998037956" target="_blank" class="btn btn-azul">Receber Orçamento Exclusivo!</a>
   </section>
 
@@ -280,18 +286,19 @@
           <h5>Páginas</h5>
           <ul class="footer-links">
             <li><a href="sites.html">Sites Profissionais</a></li>
-            <li><a href="softwares.html">Softwares Sob Medida</a></li>
+            <li><a href="softwares.html">Softwares Sob Demanda</a></li>
             <li><a href="aplicativos.html">Aplicativos Modernos</a></li>
           </ul>
         </div>
 
-        <div class="col-md-4 mb-4">
+        <!--<div class="col-md-4 mb-4">
           <h5>Institucional</h5>
           <ul class="footer-links">
             <li><a href="#">Missão, Visão e Valores</a></li>
             <li><a href="#">Nossa História</a></li>
           </ul>
         </div>
+      </div>-->
 
       </div>
 
